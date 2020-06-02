@@ -14,11 +14,17 @@ class InspectionListActivity : BaseActivity() {
 
     override fun initView() {
         super.initView()
+        setTitleName("巡检列表")
         mContext?.let {
             adapter= ItemInspectionAdapter(it)
         }
         recyList.adapter=adapter
         recyList.layoutManager=LinearLayoutManager(mContext)
+    }
+
+    override fun initEvent() {
+        super.initEvent()
+        setbackListener()
     }
 
     override fun initData() {

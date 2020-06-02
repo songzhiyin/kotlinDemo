@@ -3,17 +3,18 @@ package com.szy.kotlindemo.base
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import java.util.*
 
-abstract class BaseRecyAdapter<VH : RecyclerView.ViewHolder, T> (mContext: Context) : Adapter<VH>() {
+abstract class BaseRecyAdapter<VH : RecyclerView.ViewHolder, T>(mContext: Context) : Adapter<VH>() {
 
     protected var data = ArrayList<T>()
     protected var mInflater: LayoutInflater? = null
     protected var mContext: Context? = null
-    protected var onItemClickListener: OnItemClickListener? = null
-    protected var onItemLongListener: OnItemLongListener? = null
+    protected var onItemclickListener: OnItemClickListener? = null
+    protected var onItemlongListener: OnItemLongListener? = null
 
     init {
         this.mContext = mContext
@@ -69,22 +70,21 @@ abstract class BaseRecyAdapter<VH : RecyclerView.ViewHolder, T> (mContext: Conte
         }
     }
 
-    /**
-     * 设置item的长按事件
-     *
-     * @param onItemLongListener
-     */
-    open fun setOnItemLongListener(onItemClickListener: OnItemClickListener) {
-        this.onItemClickListener = onItemClickListener
-    }
 
     /**
      * 设置item的点击事件
      *
-     * @param onItemClickListener
      */
-    open fun setOnItemClickListener(onItemLongListener: OnItemLongListener) {
-        this.onItemLongListener = onItemLongListener
+    open fun setOnItemClickListener(onItemClickListener: OnItemClickListener) {
+        this.onItemclickListener = onItemClickListener
+    }
+
+    /**
+     * 设置item的长按事件
+     *
+     */
+    open fun setOnItemLongListener(onItemLongListener: OnItemLongListener) {
+        this.onItemlongListener = onItemLongListener
     }
 
     /**

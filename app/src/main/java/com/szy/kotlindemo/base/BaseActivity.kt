@@ -25,7 +25,7 @@ open abstract class BaseActivity : FragmentActivity() {
     var imgRight: ImageView? = null
     var mContext: Activity? = null
     var mImmersionBar: ImmersionBar? = null//状态栏
-    private var hideStatusBar:Boolean=false
+    private var hideStatusBar: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mContext = this
@@ -43,22 +43,23 @@ open abstract class BaseActivity : FragmentActivity() {
 
     fun initTitleLayout() {
         lineTitle = findViewById(R.id.lineTileLayout)
-        lineTitle?.visibility=View.GONE
+        lineTitle?.visibility = View.GONE
         tvTitile = findViewById(R.id.tvTitle)
         tvRight = findViewById(R.id.tvRight)
         imgLeft = findViewById(R.id.imgLeft)
         imgRight = findViewById(R.id.imgRight)
     }
+
     /**
      * 初始化沉浸式的设置
      */
     protected open fun initSionBar() {
-        if(hideStatusBar){//是否屏蔽状态栏的颜色
+        if (hideStatusBar) {//是否屏蔽状态栏的颜色
             mImmersionBar = ImmersionBar.with(this)
                 .transparentStatusBar()
                 .keyboardEnable(true) //解决软键盘与底部输入框冲突问题
             mImmersionBar?.init()
-        }else{
+        } else {
             mImmersionBar = ImmersionBar.with(this)
                 .keyboardEnable(true) //解决软键盘与底部输入框冲突问题
                 .fitsSystemWindows(true) //使用该属性,必须指定状态栏颜色
@@ -67,19 +68,25 @@ open abstract class BaseActivity : FragmentActivity() {
             mImmersionBar!!.init()
         }
     }
-    fun hideStatusBar(){
-        hideStatusBar=true
+
+    fun hideStatusBar() {
+        hideStatusBar = true
     }
-    open fun initView(){}
-    open fun initData(){}
-    open fun initEvent(){}
+
+    open fun initView() {}
+    open fun initData() {}
+    open fun initEvent() {}
     fun setTitleName(name: String) {
         tvTitile?.text = name
         lineTitle?.visibility = View.VISIBLE
     }
 
     fun setbackListener() {
-       imgLeft?.setOnClickListener { backFinish() }
+        imgLeft?.let {
+            it.setImageResource(R.mipmap.icon_back_white)
+            it.visibility=View.VISIBLE
+            it.setOnClickListener { backFinish() }
+        }
     }
 
     /**
@@ -101,11 +108,11 @@ open abstract class BaseActivity : FragmentActivity() {
 
     override fun startActivity(intent: Intent?) {
         super.startActivity(intent)
-        overridePendingTransition(R.anim.zoomin,R.anim.zoomout)//跳转动画
+        overridePendingTransition(R.anim.zoomin, R.anim.zoomout)//跳转动画
     }
 
     override fun startActivityForResult(intent: Intent?, requestCode: Int) {
         super.startActivityForResult(intent, requestCode)
-        overridePendingTransition(R.anim.zoomin,R.anim.zoomout)//跳转动画
+        overridePendingTransition(R.anim.zoomin, R.anim.zoomout)//跳转动画
     }
 }

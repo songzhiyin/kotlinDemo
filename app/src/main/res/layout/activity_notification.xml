@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="40dp"
+    tools:context=".activity.NotificationActivity">
+
+    <TextView
+        android:id="@+id/tvSend1"
+        style="@style/text_btn_message"
+        android:text="消息1点击不消失" />
+
+    <TextView
+        android:id="@+id/tvSend2"
+        style="@style/text_btn_message"
+        android:text="点击通知栏消息发送broadcastReceiver" />
+
+    <TextView
+        android:id="@+id/tvSend3"
+        style="@style/text_btn_message"
+        android:text="发送通知栏消息跳转界面" />
+    <TextView
+        android:id="@+id/tvCancle"
+        style="@style/text_btn_message"
+        android:text="删除消息1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/tvMessage"
+        android:gravity="center"/>
+</LinearLayout>
