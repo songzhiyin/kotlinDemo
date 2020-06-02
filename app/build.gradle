@@ -3,17 +3,17 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 28
-
-
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
     defaultConfig {
         applicationId "com.szy.kotlindemo"
-        minSdkVersion 15
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //添加到此处
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -34,4 +34,21 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation project(':libraries:network')
+    implementation rootProject.ext.dependencies["barlibrary"]//沉浸式
+    implementation rootProject.ext.dependencies["adapter-rxjava2"]
+    implementation rootProject.ext.dependencies["converter-gson"]
+    implementation rootProject.ext.dependencies["rxandroid"]
+    implementation rootProject.ext.dependencies["recyclerview"]
+    implementation rootProject.ext.dependencies["viewpager2"]
+    implementation rootProject.ext.dependencies["rxjava"]
+    implementation rootProject.ext.dependencies["SmartRefreshLayout"]//列表刷新
+    implementation rootProject.ext.dependencies["recyclerview"]
+    implementation rootProject.ext.dependencies["permission"]//动态权限
+    implementation rootProject.ext.dependencies["takephoto"]//相机相册
+    implementation rootProject.ext.dependencies["luban"]//相机相册
+    implementation rootProject.ext.dependencies["eventbus"]
+    implementation rootProject.ext.dependencies["banner"]
+    implementation rootProject.ext.dependencies["MagicIndicator"]//指示器
+    implementation rootProject.ext.dependencies["versionchecklib"]//app版本升级更新
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        style="@style/text_item_inspection"
+        android:text="时间" />
+    <TextView
+        style="@style/text_item_inspection"
+        android:text="日期" />
+    <TextView
+        style="@style/text_item_inspection"
+        android:text="00:01" />
+    <TextView
+        style="@style/text_item_inspection"
+        android:text="02:11" />
+    <TextView
+        style="@style/text_item_inspection"
+        android:text="03:12" />
+    <TextView
+        style="@style/text_item_inspection"
+        android:text="04:14" />
+    <TextView
+        style="@style/text_item_inspection"
+        android:text="05:15" />
+    <TextView
+        style="@style/text_item_inspection"
+        android:text="知道就好" />
+</LinearLayout>
