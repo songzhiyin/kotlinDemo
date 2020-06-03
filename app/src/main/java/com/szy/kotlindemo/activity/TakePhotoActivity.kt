@@ -7,6 +7,7 @@ import android.widget.ImageView
 import androidx.fragment.app.FragmentActivity
 import com.szy.kotlindemo.R
 import com.szy.kotlindemo.base.BaseActivity
+import com.szy.kotlindemo.dialog.CommonDialog
 import com.szy.kotlindemo.dialog.SelectPhotoDialog
 import com.szy.kotlindemo.util.ToastUtil
 import com.szy.lib.network.Glide.GlideHelper
@@ -35,7 +36,7 @@ class TakePhotoActivity : BaseActivity(), TakeResultListener, InvokeListener {
     var rxPermissions: RxPermissions? = null
     private var takePhoto: TakePhoto? = null
     private var invokeParam: InvokeParam? = null
-    private var imgHead:ImageView?=null
+    private var imgHead: ImageView? = null
     override fun getContentId(): Int {
         return (R.layout.activity_take_photo)
     }
@@ -45,22 +46,41 @@ class TakePhotoActivity : BaseActivity(), TakeResultListener, InvokeListener {
         setTitleName("拍照和相册")
         rxPermissions = RxPermissions(this)
         getTakePhoto()
-        imgHead=findViewById(R.id.imgIcon)
+        imgHead = findViewById(R.id.imgIcon)
     }
 
     override fun initEvent() {
         super.initEvent()
         setbackListener()
         tvSelectPhoto.setOnClickListener {
-            RxPermissions(mContext as FragmentActivity).request(android.Manifest.permission.CAMERA)
+            showSelectPhotoDialog()
+        }
+        tvCallPhone.setOnClickListener {
+            RxPermissions(mContext as FragmentActivity).request(android.Manifest.permission.CALL_PHONE)
                 ?.subscribe {
                     if (it) {
-                        showSelectPhotoDialog()
+                        showCallPhoneDialog()
                     } else {
                         ToastUtil.show(mContext, "权限没有授权")
                     }
                 }
         }
+    }
+
+    fun showCallPhoneDialog() {
+        var dialog = CommonDialog(mContext!!)
+        dialog.setContentMessage("确定拨打10086吗")
+        dialog.setonclickConfirm(object : CommonDialog.CallConfirmlistener {
+            override fun onClick() {
+                val intent = Intent(Intent.ACTION_CALL)
+                val data: Uri = Uri.parse("tel:" + 10086)
+                intent.data = data
+                startActivity(intent)
+            }
+
+        })
+        dialog.show()
+
     }
 
     fun showSelectPhotoDialog() {
@@ -84,7 +104,6 @@ class TakePhotoActivity : BaseActivity(), TakeResultListener, InvokeListener {
     }
 
 
-
     /**
      * 获取TakePhoto实例
      *
@@ -92,7 +111,8 @@ class TakePhotoActivity : BaseActivity(), TakeResultListener, InvokeListener {
      */
     fun getTakePhoto(): TakePhoto? {
         if (takePhoto == null) {
-            takePhoto = TakePhotoInvocationHandler.of(this).bind(TakePhotoImpl(this, this)) as TakePhoto
+            takePhoto =
+                TakePhotoInvocationHandler.of(this).bind(TakePhotoImpl(this, this)) as TakePhoto
         }
         return takePhoto
     }
@@ -102,7 +122,7 @@ class TakePhotoActivity : BaseActivity(), TakeResultListener, InvokeListener {
             GlideHelper.showImage(mContext, result.image.originalPath, imgHead)
 //            lubanPhoto(result.image.originalPath)
         } else {
-            ToastUtil.show(mContext,"图片获取失败")
+            ToastUtil.show(mContext, "图片获取失败")
         }
     }
 
@@ -120,6 +140,7 @@ class TakePhotoActivity : BaseActivity(), TakeResultListener, InvokeListener {
         }
         return type
     }
+
     override fun onSaveInstanceState(outState: Bundle) {
         getTakePhoto()?.onSaveInstanceState(outState)
         super.onSaveInstanceState(outState)
@@ -142,6 +163,7 @@ class TakePhotoActivity : BaseActivity(), TakeResultListener, InvokeListener {
         super.onActivityResult(requestCode, resultCode, data)
         getTakePhoto()!!.onActivityResult(requestCode, resultCode, data)
     }
+
     private fun lubanPhoto(filePath: String) {
         Luban.compress(mContext, File(filePath))
             .putGear(Luban.THIRD_GEAR) // set the compress mode, default is : THIRD_GEAR
@@ -150,13 +172,13 @@ class TakePhotoActivity : BaseActivity(), TakeResultListener, InvokeListener {
                 override fun onSuccess(fileList: List<File>) {
                     if (fileList != null && fileList.size > 0) {
 
-                    }else{
+                    } else {
                         DialogNetUtil.close_NetworkRequests_diolog()
                     }
                 }
 
                 override fun onError(e: Throwable) {
-                    ToastUtil.show(mContext,"压缩图片失败，请重试")
+                    ToastUtil.show(mContext, "压缩图片失败，请重试")
                 }
             })
     }

@@ -12,12 +12,20 @@
         android:layout_height="400dp"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
+        android:id="@+id/tvSelectPhoto"
         style="@style/text_btn_message"
-        app:layout_constraintTop_toBottomOf="@id/imgIcon"
+        android:text="选择照片"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:text="选择照片"
-        android:id="@+id/tvSelectPhoto"
-        />
+        app:layout_constraintTop_toBottomOf="@id/imgIcon" />
+
+    <TextView
+        android:id="@+id/tvCallPhone"
+        style="@style/text_btn_message"
+        android:text="拨打电话"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSelectPhoto" />
 </androidx.constraintlayout.widget.ConstraintLayout>
