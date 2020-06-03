@@ -17,7 +17,7 @@ import com.gyf.immersionbar.ImmersionBar
 import com.szy.kotlindemo.R
 import kotlinx.android.synthetic.main.activity_base.*
 
-open abstract class BaseActivity : FragmentActivity() {
+open abstract class BaseActivity : AppCompatActivity() {
     var lineTitle: View? = null
     var tvTitile: TextView? = null
     var tvRight: TextView? = null

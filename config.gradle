@@ -29,7 +29,7 @@ ext {
             "barlibrary"         : "com.gyf.immersionbar:immersionbar:3.0.0-beta05",//沉浸式
             "SmartRefreshLayout" : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14",//上下拉刷新
             "ShadowLayout"       : "com.github.limuyang2:LShadowLayout:1.0.3",//阴影
-            "permission"         : "com.qw:soulpermission:1.1.8",//Android动态权限
+            "permission"         : "com.github.tbruyelle:rxpermissions:0.10.2",//Android动态权限
             "takephoto"          : "org.devio.takephoto:takephoto_library:4.1.0",//相机相册
             "luban"              : "top.zibin:Luban:1.1.8",//鲁班压缩
             "gson"               : "com.google.code.gson:gson:2.2.4",
@@ -39,7 +39,7 @@ ext {
             "push-jcore"         : "cn.jiguang.sdk:jcore:2.1.0",
             "print"              : "com.sunmi:sunmiui:latest.release",
             "banner"             : "com.youth.banner:banner:2.0.8",
-            "viewpager2"             : "androidx.viewpager2:viewpager2:1.0.0",
+            "viewpager2"         : "androidx.viewpager2:viewpager2:1.0.0",
             "MagicIndicator"     : "com.github.hackware1993:MagicIndicator:1.5.0",//指示器
             "versionchecklib"    : "com.allenliu.versionchecklib:library:2.2.0"//版本升级更新
     ]

@@ -6,12 +6,14 @@ import android.content.Context
 import android.view.WindowManager
 import com.szy.kotlindemo.R
 
-open class BaseDialog(mContext: Context) : Dialog(mContext, R.style.Dialog) {
+open class BaseDialog : Dialog {
     var mContext: Context? = null
 
-    init {
+    constructor(mContext: Context) : super(mContext, R.style.Dialog) {
         this.mContext = mContext
-
+    }
+    constructor(mContext: Context,thresId:Int):super(mContext,thresId){
+        this.mContext=mContext
     }
 
     protected fun setDialogSize(width: Int, height: Int) {
@@ -29,7 +31,10 @@ open class BaseDialog(mContext: Context) : Dialog(mContext, R.style.Dialog) {
         if (isShowing) {
             return
         }
-        show()
+        try {
+            super.show()
+        } catch (e: Exception) {
+        }
     }
 
     override fun dismiss() {
