@@ -7,9 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".activity.DrawerLayoutActivity">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingTop="100dp"
         android:background="@color/white"
         android:orientation="vertical">
 
@@ -18,7 +19,12 @@
             style="@style/text_btn_message"
             android:layout_gravity="center"
             android:text="显示Snackbar" />
-    </FrameLayout>
+        <TextView
+            android:id="@+id/tvLifecycle"
+            style="@style/text_btn_message"
+            android:layout_gravity="center"
+            android:text="获取activity的生命周期" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
