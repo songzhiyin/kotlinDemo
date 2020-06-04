@@ -45,6 +45,7 @@ class HomeFragment : BaseFragment() {
         data.add("相机照片")
         data.add("toolbar")
         data.add("左侧滑动菜单")
+        data.add("卡片布局")
         adapter?.setDataList(data)
     }
 
@@ -71,6 +72,9 @@ class HomeFragment : BaseFragment() {
                 }
                 4->{//左侧滑动出现菜单
                     startActivity(Intent(activity, DrawerLayoutActivity::class.java))
+                }
+                5->{//卡片布局
+                    startActivity(Intent(activity, MaterialCardViewActivity::class.java))
                 }
             }
         }

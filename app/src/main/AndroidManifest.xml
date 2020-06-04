@@ -28,7 +28,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.DrawerLayoutActivity"></activity>
+        <activity android:name=".activity.MaterialCardViewActivity"></activity>
+        <activity android:name=".activity.DrawerLayoutActivity" />
         <activity android:name=".activity.ToolbarActivity" />
         <activity android:name=".activity.TakePhotoActivity" />
         <activity android:name=".activity.NotificationActivity" />
