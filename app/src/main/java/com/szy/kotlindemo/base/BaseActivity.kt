@@ -84,9 +84,18 @@ open abstract class BaseActivity : AppCompatActivity() {
     fun setbackListener() {
         imgLeft?.let {
             it.setImageResource(R.mipmap.icon_back_white)
-            it.visibility=View.VISIBLE
+            it.visibility = View.VISIBLE
             it.setOnClickListener { backFinish() }
         }
+    }
+
+    fun setRightName(name: String) {
+        tvRight?.text = name
+        tvRight?.visibility = View.VISIBLE
+    }
+
+    fun setRightListener(listener: View.OnClickListener) {
+        tvRight?.setOnClickListener(listener)
     }
 
     /**

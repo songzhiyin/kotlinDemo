@@ -3,9 +3,7 @@ package com.szy.kotlindemo.fragment
 import android.content.Intent
 import androidx.recyclerview.widget.GridLayoutManager
 import com.szy.kotlindemo.R
-import com.szy.kotlindemo.activity.InspectionListActivity
-import com.szy.kotlindemo.activity.NotificationActivity
-import com.szy.kotlindemo.activity.TakePhotoActivity
+import com.szy.kotlindemo.activity.*
 import com.szy.kotlindemo.adapter.BannerImaAdapter
 import com.szy.kotlindemo.adapter.ItemHomeMenuAdapter
 import com.szy.kotlindemo.base.BaseFragment
@@ -46,6 +44,7 @@ class HomeFragment : BaseFragment() {
         data.add("notification")
         data.add("相机照片")
         data.add("toolbar")
+        data.add("左侧滑动菜单")
         adapter?.setDataList(data)
     }
 
@@ -66,6 +65,12 @@ class HomeFragment : BaseFragment() {
                 }
                 2 -> {//拍照和相册
                     startActivity(Intent(activity, TakePhotoActivity::class.java))
+                }
+                3->{//toolbar
+                    startActivity(Intent(activity, ToolbarActivity::class.java))
+                }
+                4->{//左侧滑动出现菜单
+                    startActivity(Intent(activity, DrawerLayoutActivity::class.java))
                 }
             }
         }

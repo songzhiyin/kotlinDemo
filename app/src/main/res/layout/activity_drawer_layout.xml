@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.DrawerLayoutActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvSnackbar"
+            style="@style/text_btn_message"
+            android:layout_gravity="center"
+            android:text="显示Snackbar" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/text_btn_message"
+            android:text="mesjka" />
+
+        <TextView
+            style="@style/text_btn_message"
+            android:text="mesjka" />
+
+        <TextView
+            style="@style/text_btn_message"
+            android:text="mesjka" />
+
+        <TextView
+            style="@style/text_btn_message"
+            android:text="mesjka" />
+    </LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
