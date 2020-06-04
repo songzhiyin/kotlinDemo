@@ -46,6 +46,7 @@ class HomeFragment : BaseFragment() {
         data.add("toolbar")
         data.add("左侧滑动菜单")
         data.add("卡片布局")
+        data.add("viewmodel")
         adapter?.setDataList(data)
     }
 
@@ -75,6 +76,9 @@ class HomeFragment : BaseFragment() {
                 }
                 5->{//卡片布局
                     startActivity(Intent(activity, MaterialCardViewActivity::class.java))
+                }
+                6 -> {//viewmodel
+                    startActivity(Intent(activity, HourMeterActivity::class.java))
                 }
             }
         }
