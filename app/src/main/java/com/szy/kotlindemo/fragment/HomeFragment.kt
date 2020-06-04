@@ -47,6 +47,7 @@ class HomeFragment : BaseFragment() {
         data.add("左侧滑动菜单")
         data.add("卡片布局")
         data.add("viewmodel")
+        data.add("liveData")
         adapter?.setDataList(data)
     }
 
@@ -78,6 +79,9 @@ class HomeFragment : BaseFragment() {
                     startActivity(Intent(activity, MaterialCardViewActivity::class.java))
                 }
                 6 -> {//viewmodel
+                    startActivity(Intent(activity, HourMeterActivity::class.java))
+                }
+                7 -> {//liveData
                     startActivity(Intent(activity, HourMeterActivity::class.java))
                 }
             }

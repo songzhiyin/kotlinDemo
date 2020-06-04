@@ -33,4 +33,12 @@
         android:text="删除"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvAdd" />
+
+    <TextView
+        android:id="@+id/tvAsynLoad"
+        style="@style/text_btn_message"
+        android:layout_marginTop="40dp"
+        android:text="异步加载数据"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDelete" />
 </androidx.constraintlayout.widget.ConstraintLayout>
