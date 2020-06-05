@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-
+apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
@@ -48,6 +48,8 @@ dependencies {
     implementation rootProject.ext.dependencies["converter-gson"]
     implementation rootProject.ext.dependencies["rxandroid"]
     implementation rootProject.ext.dependencies["rxjava"]
+    implementation rootProject.ext.dependencies["room"]
+    kapt rootProject.ext.dependencies["roomCompiler"]
     implementation rootProject.ext.dependencies["SmartRefreshLayout"]//列表刷新
     implementation rootProject.ext.dependencies["permission"]//动态权限
     implementation rootProject.ext.dependencies["takephoto"]//相机相册

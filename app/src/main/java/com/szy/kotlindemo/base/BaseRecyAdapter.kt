@@ -96,6 +96,10 @@ abstract class BaseRecyAdapter<VH : RecyclerView.ViewHolder, T>(mContext: Contex
         data.add(entity)
         notifyDataSetChanged()
     }
+    open fun remove(entity: T){
+        data.remove(entity)
+        notifyDataSetChanged()
+    }
 
     interface OnItemClickListener {
         fun Onclick(position: Int, data: Any?)
