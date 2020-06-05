@@ -6,15 +6,18 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.szy.kotlindemo.db.dao.DrugDao
 import com.szy.kotlindemo.db.dao.FoodDao
 import com.szy.kotlindemo.db.dao.OrderListDao
+import com.szy.kotlindemo.db.entity.DrugEntity
 import com.szy.kotlindemo.db.entity.FoodEntity
 import com.szy.kotlindemo.db.entity.OrderListEntity
 
-@Database(version = 3, entities = [OrderListEntity::class, FoodEntity::class])
+@Database(version = 3, entities = [OrderListEntity::class, FoodEntity::class,DrugEntity::class])
 abstract class AppDataBase : RoomDatabase() {
     abstract fun OrderListDao(): OrderListDao
     abstract fun FoodDao(): FoodDao
+    abstract fun DrugDao(): DrugDao
 
     companion object {
         val MIGRATION_1_2 = object : Migration(1, 2) {

@@ -8,9 +8,12 @@ import com.szy.kotlindemo.base.BaseFragment
 import com.szy.kotlindemo.base.BaseRecyAdapter
 import com.szy.kotlindemo.db.OrderListHelp
 import com.szy.kotlindemo.db.OnLoadLisetener
+import com.szy.kotlindemo.db.entity.DrugEntity
 import com.szy.kotlindemo.db.entity.OrderListEntity
 import com.szy.kotlindemo.dialog.CommonDialog
+import com.szy.kotlindemo.entity.DeskEntity
 import com.szy.kotlindemo.util.TimeUtil
+import com.szy.kotlindemo.util.ToastUtil
 import com.szy.lib.network.Retrofit.Util.DialogNetUtil
 import kotlinx.android.synthetic.main.fragment_order_list.*
 import kotlinx.android.synthetic.main.include_title_layout.*

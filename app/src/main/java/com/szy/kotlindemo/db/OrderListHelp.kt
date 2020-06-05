@@ -3,6 +3,7 @@ package com.szy.kotlindemo.db
 import android.content.Context
 import android.util.Log
 import com.szy.kotlindemo.db.dao.OrderListDao
+import com.szy.kotlindemo.db.entity.DrugEntity
 import com.szy.kotlindemo.db.entity.OrderListEntity
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -14,6 +15,15 @@ import java.util.concurrent.Executors
 object OrderListHelp {
     private val TAG = "roomSQL"
     private var service: ExecutorService? = null
+    fun insertDrug(mContext: Context,entity: DrugEntity){
+        initExecutors()
+        service?.let {
+            it.execute {
+                val id = AppDataBase.getDatabase(mContext).DrugDao().insertData(entity)
+                Log.i(TAG, "药品数据成功，数据的id是$id")
+            }
+        }
+    }
     fun insert(mContext: Context, entity: OrderListEntity) {
         initExecutors()
         service?.let {
