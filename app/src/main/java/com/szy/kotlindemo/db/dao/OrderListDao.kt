@@ -8,6 +8,9 @@ interface OrderListDao {
     @Insert
     fun insertEnity(entity: OrderListEntity): Long
 
+    @Insert
+    fun insertData(data:ArrayList<OrderListEntity>):List<Long>
+
     @Update
     fun updateEntity(entity: OrderListEntity)
 

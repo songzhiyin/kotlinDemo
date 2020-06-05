@@ -10,8 +10,6 @@ class FoodEntity() {
     var id:Long=0
     var name:String=""
     var message:String=""
-    constructor(name:String,message: String):this(){
-        this.name=name
-        this.message=message
-    }
+    var createTime:String=""
+    var finishTime:String?=null
 }

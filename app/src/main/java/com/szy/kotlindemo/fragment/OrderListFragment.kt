@@ -1,20 +1,16 @@
 package com.szy.kotlindemo.fragment
 
 import android.os.Handler
-import android.view.View
-import androidx.constraintlayout.solver.LinearSystem
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.OrientationHelper
 import com.szy.kotlindemo.R
 import com.szy.kotlindemo.adapter.ItemOrderListAdapter
 import com.szy.kotlindemo.base.BaseFragment
 import com.szy.kotlindemo.base.BaseRecyAdapter
 import com.szy.kotlindemo.db.OrderListHelp
-import com.szy.kotlindemo.db.dao.OnLoadLisetener
+import com.szy.kotlindemo.db.OnLoadLisetener
 import com.szy.kotlindemo.db.entity.OrderListEntity
 import com.szy.kotlindemo.dialog.CommonDialog
 import com.szy.kotlindemo.util.TimeUtil
-import com.szy.kotlindemo.util.ToastUtil
 import com.szy.lib.network.Retrofit.Util.DialogNetUtil
 import kotlinx.android.synthetic.main.fragment_order_list.*
 import kotlinx.android.synthetic.main.include_title_layout.*
@@ -93,13 +89,15 @@ class OrderListFragment : BaseFragment() {
         entity.message = "这是一个悲伤的故事"
         entity.createTime = TimeUtil.getDateTimeStr(System.currentTimeMillis())
         OrderListHelp.insert(mContext!!, entity)
+//        OrderListHelp.insertAll(mContext!!, arrayListOf(entity,entity))
         adapter?.addBottonData(entity)
     }
 
     override fun initdata() {
         super.initdata()
         OrderListHelp.getAllData(mContext!!,
-            object : OnLoadLisetener<List<OrderListEntity>> {
+            object :
+                OnLoadLisetener<List<OrderListEntity>> {
                 override fun onSucced(data: List<OrderListEntity>) {
                     adapter?.setDataList(data ?: ArrayList<OrderListEntity>())
                     if (adapter!!.getdata().isEmpty()) {

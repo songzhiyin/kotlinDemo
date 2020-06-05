@@ -1,13 +1,10 @@
 package com.szy.kotlindemo.db
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
-import com.szy.kotlindemo.db.dao.OnLoadLisetener
 import com.szy.kotlindemo.db.dao.OrderListDao
 import com.szy.kotlindemo.db.entity.OrderListEntity
 import io.reactivex.Observable
-import io.reactivex.ObservableOnSubscribe
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.ExecutorService
@@ -23,6 +20,16 @@ object OrderListHelp {
             it.execute {
                 val id = getDao(mContext).insertEnity(entity)
                 Log.i(TAG, "保存数据成功，数据的id是$id")
+            }
+        }
+
+    }
+    fun insertAll(mContext: Context, data: ArrayList<OrderListEntity>) {
+        initExecutors()
+        service?.let {
+            it.execute {
+                val id = getDao(mContext).insertData(data)
+                Log.i(TAG, "保存数据成功，数据的id是${id}")
             }
         }
 
@@ -80,4 +87,6 @@ object OrderListHelp {
             service = Executors.newSingleThreadExecutor();
         }
     }
+
+
 }
