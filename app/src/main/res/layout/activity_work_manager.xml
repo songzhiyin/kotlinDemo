@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.WorkManagerActivity">
+
+    <TextView
+        android:id="@+id/tvStart"
+        style="@style/text_btn_message"
+        android:text="开始执行后台任务"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvStartTimeTask"
+        style="@style/text_btn_message"
+        android:text="开始执行定时循环后台任务"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvStart"
+        />
+    <TextView
+        android:id="@+id/tvStopTimeTask"
+        style="@style/text_btn_message"
+        android:text="结束定时循环后台任务"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvStartTimeTask"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

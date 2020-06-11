@@ -3,6 +3,7 @@ package com.szy.kotlindemo.util
 import android.app.Activity
 import android.content.Context
 import android.content.Context.INPUT_METHOD_SERVICE
+import android.content.Intent
 import android.graphics.Paint
 import android.view.View
 import android.view.WindowManager
@@ -152,6 +153,8 @@ object CommonUtils {
         }
         return size
     }
+
+
 
 
 }

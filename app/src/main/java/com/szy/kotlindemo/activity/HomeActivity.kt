@@ -6,7 +6,6 @@ import com.szy.kotlindemo.R
 import com.szy.kotlindemo.base.BaseActivity
 import com.szy.kotlindemo.fragment.HomeFragment
 import com.szy.kotlindemo.fragment.OrderListFragment
-import com.szy.kotlindemo.lifecycle.MyliftcycleObserver
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : BaseActivity() {
@@ -21,7 +20,6 @@ class HomeActivity : BaseActivity() {
         super.initView()
         adapter = ScreenSlidePagerAdapter(this)
         mViewpager.adapter = adapter
-        lifecycle.addObserver(MyliftcycleObserver(this.localClassName))
     }
 
     override fun initData() {

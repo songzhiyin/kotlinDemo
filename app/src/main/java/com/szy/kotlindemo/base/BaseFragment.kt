@@ -1,6 +1,7 @@
 package com.szy.kotlindemo.base
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -50,6 +51,22 @@ open abstract class BaseFragment : Fragment() {
     override fun startActivity(intent: Intent?) {
         super.startActivity(intent)
         activity?.overridePendingTransition(R.anim.zoomin, R.anim.zoomout)//跳转动画
+    }
+
+    inline fun <reified T> startActivity(
+        mContext: Context?,
+        block: Intent.() -> Unit
+    ) {
+        val intent = Intent(mContext, T::class.java)
+        intent!!.block()
+        mContext?.startActivity(intent)
+    }
+
+    inline fun <reified T> startActivity(
+        mContext: Context?
+    ) {
+        val intent = Intent(mContext, T::class.java)
+        mContext?.startActivity(intent)
     }
 
     override fun startActivityForResult(intent: Intent?, requestCode: Int) {

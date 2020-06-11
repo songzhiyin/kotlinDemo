@@ -4,19 +4,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.core.view.GravityCompat
+import androidx.fragment.app.DialogFragment
 import com.google.android.material.snackbar.Snackbar
 import com.szy.kotlindemo.R
 import com.szy.kotlindemo.base.BaseActivity
-import com.szy.kotlindemo.lifecycle.MyliftcycleObserver
 import com.szy.kotlindemo.util.ToastUtil
 import kotlinx.android.synthetic.main.activity_base.*
 import kotlinx.android.synthetic.main.activity_drawer_layout.*
+import rx.exceptions.Exceptions
+import java.util.concurrent.Executors
 
 /**
  * 左侧滑动菜单
  */
 class DrawerLayoutActivity : BaseActivity() {
-    lateinit var lifeOberser: MyliftcycleObserver
+
     override fun getContentId(): Int {
         return (R.layout.activity_drawer_layout)
     }
@@ -25,8 +27,6 @@ class DrawerLayoutActivity : BaseActivity() {
         super.initView()
         setTitleName("左滑菜单")
         setRightName("菜单")
-        lifeOberser = MyliftcycleObserver(lifecycle)
-        lifecycle.addObserver(lifeOberser)
     }
 
     override fun initEvent() {
@@ -37,14 +37,27 @@ class DrawerLayoutActivity : BaseActivity() {
         })
         tvSnackbar.setOnClickListener {
             ToastUtil.showViewListener(contentView, View.OnClickListener {
-                ToastUtil.show(mContext, "点击了snacbar")
+                ToastUtil.show("点击了snacbar")
             }, "确定要点击吗")
         }
         tvLifecycle.setOnClickListener {
             lifeOberser.getActivityStatu()
         }
-
+        tvBtn1.setOnClickListener {
+            ToastUtil.show("按钮1")
+        }
+        tvBtn2.setOnClickListener {
+            ToastUtil.show("按钮2")
+        }
+        tvBtn3.setOnClickListener {
+            ToastUtil.show("按钮3")
+        }
+        tvBtn4.setOnClickListener {
+            ToastUtil.show("按钮4")
+        }
+        Executors.newCachedThreadPool()
     }
+
 
     override fun onDestroy() {
         super.onDestroy()

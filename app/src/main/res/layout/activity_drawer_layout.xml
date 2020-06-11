@@ -35,18 +35,23 @@
 
         <TextView
             style="@style/text_btn_message"
-            android:text="mesjka" />
+            android:id="@+id/tvBtn1"
+            android:text="按钮1" />
 
         <TextView
             style="@style/text_btn_message"
-            android:text="mesjka" />
+            android:id="@+id/tvBtn2"
+            android:text="按钮2" />
 
         <TextView
             style="@style/text_btn_message"
-            android:text="mesjka" />
+            android:id="@+id/tvBtn3"
+            android:text="按钮3" />
 
         <TextView
             style="@style/text_btn_message"
-            android:text="mesjka" />
+            android:id="@+id/tvBtn4"
+            android:text="按钮4" />
     </LinearLayout>
+
 </androidx.drawerlayout.widget.DrawerLayout>

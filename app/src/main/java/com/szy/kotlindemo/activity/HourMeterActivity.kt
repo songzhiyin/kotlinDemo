@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.szy.kotlindemo.R
 import com.szy.kotlindemo.base.BaseActivity
-import com.szy.kotlindemo.lifecycle.MyliftcycleObserver
 import com.szy.kotlindemo.viewmodel.HourMeteViewModelFactory
 import com.szy.kotlindemo.viewmodel.HourMeterViewModel
 import kotlinx.android.synthetic.main.activity_hour_meter.*
@@ -24,7 +23,6 @@ class HourMeterActivity : BaseActivity() {
     override fun initView() {
         super.initView()
         setTitleName("viewmodel")
-        lifecycle.addObserver(MyliftcycleObserver(this.localClassName))
     }
 
     override fun initEvent() {

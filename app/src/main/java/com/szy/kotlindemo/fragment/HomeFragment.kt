@@ -4,12 +4,12 @@ import android.content.Intent
 import androidx.recyclerview.widget.GridLayoutManager
 import com.szy.kotlindemo.R
 import com.szy.kotlindemo.activity.*
+import com.szy.kotlindemo.activity.launchMode.LaunchModel1Activity
 import com.szy.kotlindemo.adapter.BannerImaAdapter
 import com.szy.kotlindemo.adapter.ItemHomeMenuAdapter
 import com.szy.kotlindemo.base.BaseFragment
 import com.szy.kotlindemo.base.BaseRecyAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlin.math.log
 
 class HomeFragment : BaseFragment() {
     var adapter: ItemHomeMenuAdapter? = null
@@ -48,6 +48,8 @@ class HomeFragment : BaseFragment() {
         data.add("卡片布局")
         data.add("viewmodel")
         data.add("liveData")
+        data.add("workmanager")
+        data.add("launchModel")
         adapter?.setDataList(data)
     }
 
@@ -61,13 +63,16 @@ class HomeFragment : BaseFragment() {
         override fun Onclick(position: Int, data: Any?) {
             when (position) {
                 0 -> {
-                    startActivity(Intent(activity, InspectionListActivity::class.java))
+                    startActivity<InspectionListActivity>(activity!!){
+                       putExtra("top","生成新的嵌套滑动表格")
+                       putExtra("top1","表格可以左右上下滑动")
+                    }
                 }
                 1 -> {//发送notification
-                    startActivity(Intent(activity, NotificationActivity::class.java))
+                    startActivity<NotificationActivity>(activity)
                 }
                 2 -> {//拍照和相册
-                    startActivity(Intent(activity, TakePhotoActivity::class.java))
+                    startActivity<TakePhotoActivity>(activity)
                 }
                 3->{//toolbar
                     startActivity(Intent(activity, ToolbarActivity::class.java))
@@ -83,6 +88,12 @@ class HomeFragment : BaseFragment() {
                 }
                 7 -> {//liveData
                     startActivity(Intent(activity, HourMeterActivity::class.java))
+                }
+                8 -> {//workmanager
+                    startActivity(Intent(activity, WorkManagerActivity::class.java))
+                }
+                9->{//测试activity的launchModel——singtask
+                    startActivity<LaunchModel1Activity>(activity)
                 }
             }
         }

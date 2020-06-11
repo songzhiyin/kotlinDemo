@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentActivity
 import com.gyf.immersionbar.ImmersionBar
 import com.szy.kotlindemo.R
+import com.szy.kotlindemo.lifecycle.MyliftcycleObserver
 import kotlinx.android.synthetic.main.activity_base.*
 
 open abstract class BaseActivity : AppCompatActivity() {
@@ -26,6 +27,7 @@ open abstract class BaseActivity : AppCompatActivity() {
     var mContext: Activity? = null
     var mImmersionBar: ImmersionBar? = null//状态栏
     private var hideStatusBar: Boolean = false
+    protected lateinit var lifeOberser: MyliftcycleObserver
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mContext = this
@@ -37,6 +39,8 @@ open abstract class BaseActivity : AppCompatActivity() {
         initView()
         initData()
         initEvent()
+        lifeOberser = MyliftcycleObserver(lifecycle,this.localClassName)
+        lifecycle.addObserver(lifeOberser)
     }
 
     protected abstract fun getContentId(): Int
@@ -113,6 +117,27 @@ open abstract class BaseActivity : AppCompatActivity() {
             return false
         }
         return super.onKeyDown(keyCode, event)
+    }
+
+    /**
+     * inline内联函数
+     * reified 泛型实话
+     * 高级函数
+     */
+    inline fun <reified T> startActivity(
+        mContext: Context,
+        block: Intent.() -> Unit
+    ) {
+        val intent = Intent(mContext, T::class.java)
+        intent.block()
+        mContext.startActivity(intent)
+    }
+
+    inline fun <reified T> startActivity(
+        mContext: Context
+    ) {
+        val intent = Intent(mContext, T::class.java)
+        mContext.startActivity(intent)
     }
 
     override fun startActivity(intent: Intent?) {

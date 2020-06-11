@@ -19,6 +19,10 @@ class MyliftcycleObserver : LifecycleObserver {
     constructor(lifecycles: Lifecycle) {
         this.lifecycle = lifecycle
     }
+    constructor(lifecycles: Lifecycle,activityName: String) {
+        this.lifecycle = lifecycle
+        this.activityName=activityName
+    }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreat() {

@@ -61,7 +61,7 @@ class TakePhotoActivity : BaseActivity(), TakeResultListener, InvokeListener {
                     if (it) {
                         showCallPhoneDialog()
                     } else {
-                        ToastUtil.show(mContext, "权限没有授权")
+                        ToastUtil.show( "权限没有授权")
                     }
                 }
         }
@@ -122,7 +122,7 @@ class TakePhotoActivity : BaseActivity(), TakeResultListener, InvokeListener {
             GlideHelper.showImage(mContext, result.image.originalPath, imgHead)
 //            lubanPhoto(result.image.originalPath)
         } else {
-            ToastUtil.show(mContext, "图片获取失败")
+            ToastUtil.show( "图片获取失败")
         }
     }
 
@@ -178,7 +178,7 @@ class TakePhotoActivity : BaseActivity(), TakeResultListener, InvokeListener {
                 }
 
                 override fun onError(e: Throwable) {
-                    ToastUtil.show(mContext, "压缩图片失败，请重试")
+                    ToastUtil.show( "压缩图片失败，请重试")
                 }
             })
     }

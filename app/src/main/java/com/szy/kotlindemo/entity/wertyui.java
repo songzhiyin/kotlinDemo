@@ -7,4 +7,6 @@ public class wertyui {
     private void show(){
         Map map=new HashMap<String,Object>();
     }
+
+    
 }

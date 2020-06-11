@@ -42,6 +42,7 @@ ext {
             "banner"             : "com.youth.banner:banner:2.0.8",
             "room"               : "androidx.room:room-runtime:2.1.0",
             "roomCompiler"       : "androidx.room:room-compiler:2.1.0",
+            "workManager"       : "androidx.work:work-runtime:2.2.0",
             "viewpager2"         : "androidx.viewpager2:viewpager2:1.0.0",
             "MagicIndicator"     : "com.github.hackware1993:MagicIndicator:1.5.0",//指示器
             "versionchecklib"    : "com.allenliu.versionchecklib:library:2.2.0"//版本升级更新

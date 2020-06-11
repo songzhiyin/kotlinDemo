@@ -36,13 +36,13 @@ class ToolbarActivity : BaseActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             R.id.btn1 -> {
-                ToastUtil.show(mContext, "按钮1")
+                ToastUtil.show( "按钮1")
             }
             R.id.btn2 -> {
-                ToastUtil.show(mContext, "按钮2")
+                ToastUtil.show( "按钮2")
             }
             R.id.btn3 -> {
-                ToastUtil.show(mContext, "按钮3")
+                ToastUtil.show( "按钮3")
             }
         }
         return true

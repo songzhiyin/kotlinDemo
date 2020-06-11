@@ -20,6 +20,8 @@ class InspectionListActivity : BaseActivity() {
         }
         recyList.adapter=adapter
         recyList.layoutManager=LinearLayoutManager(mContext)
+        tvtop.text=intent.getStringExtra("top")
+        tvtop1.text=intent.getStringExtra("top1")
     }
 
     override fun initEvent() {

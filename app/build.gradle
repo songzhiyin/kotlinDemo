@@ -55,6 +55,7 @@ dependencies {
     implementation rootProject.ext.dependencies["takephoto"]//相机相册
     implementation rootProject.ext.dependencies["luban"]//相机相册
     implementation rootProject.ext.dependencies["eventbus"]
+    implementation rootProject.ext.dependencies["workManager"]
     implementation rootProject.ext.dependencies["banner"]
     implementation rootProject.ext.dependencies["MagicIndicator"]//指示器
     implementation rootProject.ext.dependencies["versionchecklib"]//app版本升级更新
