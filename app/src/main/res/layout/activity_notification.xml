@@ -7,7 +7,7 @@
     android:background="@color/white"
     android:orientation="vertical"
     android:padding="40dp"
-    tools:context=".activity.NotificationActivity">
+    tools:context=".activity.function.NotificationActivity">
 
     <TextView
         android:id="@+id/tvSend1"

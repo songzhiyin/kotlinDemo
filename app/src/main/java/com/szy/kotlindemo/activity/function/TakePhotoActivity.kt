@@ -1,4 +1,4 @@
-package com.szy.kotlindemo.activity
+package com.szy.kotlindemo.activity.function
 
 import android.content.Intent
 import android.net.Uri

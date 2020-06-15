@@ -26,7 +26,7 @@ public class RecyclerScrollView extends ScrollView {
     }
 
     /**
-     * 是否intercept当前的触摸事件
+     * 是否拦截分发事件
      * @param ev 触摸事件
      * @return true：调用onMotionEvent()方法，并完成滑动操作
      */

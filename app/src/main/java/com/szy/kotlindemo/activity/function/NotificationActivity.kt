@@ -1,4 +1,4 @@
-package com.szy.kotlindemo.activity
+package com.szy.kotlindemo.activity.function
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -9,11 +9,10 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.graphics.BitmapFactory
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import com.szy.kotlindemo.R
+import com.szy.kotlindemo.activity.home.HomeActivity
 import com.szy.kotlindemo.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_notification.*
 

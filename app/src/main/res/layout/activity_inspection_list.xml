@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.InspectionListActivity">
+    tools:context=".activity.home.InspectionListActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,32 +13,37 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:id="@+id/tvtop"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
             android:gravity="center"
-            android:text="casjkcjnaskcjcasjkc" />
+            android:padding="12dp"
+            android:text="截至6月14日24时，据31个省（自治区、直辖市）和新疆生产建设兵团报告，现有确诊病例177例（其中重症病例2例），累计治愈出院病例78370例，累计死亡病例4634例，累计报告确诊病例83181例，现有疑似病例3例。累计追踪到密切接触者752978人，尚在医学观察的密切接触者3852人。" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:gravity="center"
-            android:id="@+id/tvtop1"
-            android:text="casjkcjnaskcjcasjkc" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:gravity="center"
-            android:text="casjkcjnaskcjcasjkc" />
 
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyList"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
         </HorizontalScrollView>
+
+        <LinearLayout
+            android:id="@+id/lineData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

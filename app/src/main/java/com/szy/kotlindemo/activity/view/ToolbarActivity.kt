@@ -1,4 +1,4 @@
-package com.szy.kotlindemo.activity
+package com.szy.kotlindemo.activity.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

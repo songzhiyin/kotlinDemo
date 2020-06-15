@@ -8,7 +8,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".activity.MaterialCardViewActivity">
+    tools:context=".activity.view.MaterialCardViewActivity">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="200dp"

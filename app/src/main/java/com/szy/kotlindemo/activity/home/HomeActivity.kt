@@ -1,5 +1,6 @@
-package com.szy.kotlindemo.activity
+package com.szy.kotlindemo.activity.home
 
+import android.os.Handler
 import androidx.fragment.app.*
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.szy.kotlindemo.R
@@ -11,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_home.*
 class HomeActivity : BaseActivity() {
     var dataFragment = ArrayList<Fragment>()
     var adapter: FragmentStateAdapter? = null
+    lateinit var handler: Handler
     override fun getContentId(): Int {
         hideStatusBar()
         return (R.layout.activity_home)

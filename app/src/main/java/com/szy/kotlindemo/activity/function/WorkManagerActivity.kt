@@ -1,7 +1,5 @@
-package com.szy.kotlindemo.activity
+package com.szy.kotlindemo.activity.function
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import androidx.work.OneTimeWorkRequest
 import androidx.work.PeriodicWorkRequest
 import androidx.work.WorkManager

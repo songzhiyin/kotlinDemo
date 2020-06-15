@@ -1,9 +1,6 @@
-package com.szy.kotlindemo.activity
+package com.szy.kotlindemo.activity.function
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.szy.kotlindemo.R
 import com.szy.kotlindemo.base.BaseActivity

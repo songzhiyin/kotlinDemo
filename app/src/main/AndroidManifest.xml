@@ -29,18 +29,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.launchMode.LaunchModel2Activity"></activity>
+        <activity android:name=".activity.view.MoveLineViewActivity"></activity>
+        <activity android:name=".activity.launchMode.LaunchModel2Activity" />
         <activity android:name=".activity.launchMode.LaunchModel1Activity" />
-        <activity android:name=".activity.WorkManagerActivity" />
-        <activity android:name=".activity.HourMeterActivity" />
-        <activity android:name=".activity.MaterialCardViewActivity" />
-        <activity android:name=".activity.DrawerLayoutActivity" />
-        <activity android:name=".activity.ToolbarActivity" />
-        <activity android:name=".activity.TakePhotoActivity" />
-        <activity android:name=".activity.NotificationActivity" />
-        <activity android:name=".activity.InspectionListActivity" />
+        <activity android:name=".activity.function.WorkManagerActivity" />
+        <activity android:name=".activity.function.HourMeterActivity" />
+        <activity android:name=".activity.view.MaterialCardViewActivity" />
+        <activity android:name=".activity.view.DrawerLayoutActivity" />
+        <activity android:name=".activity.view.ToolbarActivity" />
+        <activity android:name=".activity.function.TakePhotoActivity" />
+        <activity android:name=".activity.function.NotificationActivity" />
+        <activity android:name=".activity.home.InspectionListActivity" />
         <activity
-            android:name=".activity.WelcomeActivity"
+            android:name=".activity.home.WelcomeActivity"
+            android:taskAffinity="com.szy.kotlindemo.huihui"
             android:theme="@style/welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,7 +51,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.HomeActivity"
+            android:name=".activity.home.HomeActivity"
             android:launchMode="singleTask" />
     </application>
 

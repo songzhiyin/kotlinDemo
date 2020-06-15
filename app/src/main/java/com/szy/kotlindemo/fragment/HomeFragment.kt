@@ -3,8 +3,16 @@ package com.szy.kotlindemo.fragment
 import android.content.Intent
 import androidx.recyclerview.widget.GridLayoutManager
 import com.szy.kotlindemo.R
-import com.szy.kotlindemo.activity.*
+import com.szy.kotlindemo.activity.function.HourMeterActivity
+import com.szy.kotlindemo.activity.function.NotificationActivity
+import com.szy.kotlindemo.activity.function.TakePhotoActivity
+import com.szy.kotlindemo.activity.function.WorkManagerActivity
+import com.szy.kotlindemo.activity.home.InspectionListActivity
 import com.szy.kotlindemo.activity.launchMode.LaunchModel1Activity
+import com.szy.kotlindemo.activity.view.DrawerLayoutActivity
+import com.szy.kotlindemo.activity.view.MaterialCardViewActivity
+import com.szy.kotlindemo.activity.view.MoveLineViewActivity
+import com.szy.kotlindemo.activity.view.ToolbarActivity
 import com.szy.kotlindemo.adapter.BannerImaAdapter
 import com.szy.kotlindemo.adapter.ItemHomeMenuAdapter
 import com.szy.kotlindemo.base.BaseFragment
@@ -50,6 +58,7 @@ class HomeFragment : BaseFragment() {
         data.add("liveData")
         data.add("workmanager")
         data.add("launchModel")
+        data.add("view滑动")
         adapter?.setDataList(data)
     }
 
@@ -94,6 +103,9 @@ class HomeFragment : BaseFragment() {
                 }
                 9->{//测试activity的launchModel——singtask
                     startActivity<LaunchModel1Activity>(activity)
+                }
+                10->{//view滑动
+                    startActivity<MoveLineViewActivity>(activity)
                 }
             }
         }

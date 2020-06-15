@@ -1,9 +1,7 @@
 package com.szy.kotlindemo.activity.launchMode
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import com.szy.kotlindemo.R
-import com.szy.kotlindemo.activity.HomeActivity
+import com.szy.kotlindemo.activity.home.HomeActivity
 import com.szy.kotlindemo.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_launch_model1.*
 

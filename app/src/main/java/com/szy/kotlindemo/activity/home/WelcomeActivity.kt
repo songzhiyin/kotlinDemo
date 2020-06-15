@@ -1,4 +1,4 @@
-package com.szy.kotlindemo.activity
+package com.szy.kotlindemo.activity.home
 
 import android.content.Intent
 import android.os.Handler
