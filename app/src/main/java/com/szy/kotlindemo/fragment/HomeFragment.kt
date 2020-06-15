@@ -3,10 +3,7 @@ package com.szy.kotlindemo.fragment
 import android.content.Intent
 import androidx.recyclerview.widget.GridLayoutManager
 import com.szy.kotlindemo.R
-import com.szy.kotlindemo.activity.function.HourMeterActivity
-import com.szy.kotlindemo.activity.function.NotificationActivity
-import com.szy.kotlindemo.activity.function.TakePhotoActivity
-import com.szy.kotlindemo.activity.function.WorkManagerActivity
+import com.szy.kotlindemo.activity.function.*
 import com.szy.kotlindemo.activity.home.InspectionListActivity
 import com.szy.kotlindemo.activity.launchMode.LaunchModel1Activity
 import com.szy.kotlindemo.activity.view.DrawerLayoutActivity
@@ -59,6 +56,7 @@ class HomeFragment : BaseFragment() {
         data.add("workmanager")
         data.add("launchModel")
         data.add("view滑动")
+        data.add("列表输入框")
         adapter?.setDataList(data)
     }
 
@@ -106,6 +104,9 @@ class HomeFragment : BaseFragment() {
                 }
                 10->{//view滑动
                     startActivity<MoveLineViewActivity>(activity)
+                }
+                11->{//列表输入框
+                    startActivity<InputSudientListActivity>(activity)
                 }
             }
         }
