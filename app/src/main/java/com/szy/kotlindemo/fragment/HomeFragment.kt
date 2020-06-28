@@ -1,15 +1,14 @@
 package com.szy.kotlindemo.fragment
 
 import android.content.Intent
+import android.util.Log
 import androidx.recyclerview.widget.GridLayoutManager
 import com.szy.kotlindemo.R
 import com.szy.kotlindemo.activity.function.*
 import com.szy.kotlindemo.activity.home.InspectionListActivity
+import com.szy.kotlindemo.activity.home.WelcomeActivity
 import com.szy.kotlindemo.activity.launchMode.LaunchModel1Activity
-import com.szy.kotlindemo.activity.view.DrawerLayoutActivity
-import com.szy.kotlindemo.activity.view.MaterialCardViewActivity
-import com.szy.kotlindemo.activity.view.MoveLineViewActivity
-import com.szy.kotlindemo.activity.view.ToolbarActivity
+import com.szy.kotlindemo.activity.view.*
 import com.szy.kotlindemo.adapter.BannerImaAdapter
 import com.szy.kotlindemo.adapter.ItemHomeMenuAdapter
 import com.szy.kotlindemo.base.BaseFragment
@@ -57,6 +56,8 @@ class HomeFragment : BaseFragment() {
         data.add("launchModel")
         data.add("view滑动")
         data.add("列表输入框")
+        data.add("webview")
+        data.add("自定义view集合")
         adapter?.setDataList(data)
     }
 
@@ -70,9 +71,9 @@ class HomeFragment : BaseFragment() {
         override fun Onclick(position: Int, data: Any?) {
             when (position) {
                 0 -> {
-                    startActivity<InspectionListActivity>(activity!!){
-                       putExtra("top","生成新的嵌套滑动表格")
-                       putExtra("top1","表格可以左右上下滑动")
+                    startActivity<InspectionListActivity>(activity!!) {
+                        putExtra("top", "生成新的嵌套滑动表格")
+                        putExtra("top1", "表格可以左右上下滑动")
                     }
                 }
                 1 -> {//发送notification
@@ -81,13 +82,13 @@ class HomeFragment : BaseFragment() {
                 2 -> {//拍照和相册
                     startActivity<TakePhotoActivity>(activity)
                 }
-                3->{//toolbar
+                3 -> {//toolbar
                     startActivity(Intent(activity, ToolbarActivity::class.java))
                 }
-                4->{//左侧滑动出现菜单
+                4 -> {//左侧滑动出现菜单
                     startActivity(Intent(activity, DrawerLayoutActivity::class.java))
                 }
-                5->{//卡片布局
+                5 -> {//卡片布局
                     startActivity(Intent(activity, MaterialCardViewActivity::class.java))
                 }
                 6 -> {//viewmodel
@@ -99,14 +100,20 @@ class HomeFragment : BaseFragment() {
                 8 -> {//workmanager
                     startActivity(Intent(activity, WorkManagerActivity::class.java))
                 }
-                9->{//测试activity的launchModel——singtask
+                9 -> {//测试activity的launchModel——singtask
                     startActivity<LaunchModel1Activity>(activity)
                 }
-                10->{//view滑动
+                10 -> {//view滑动
                     startActivity<MoveLineViewActivity>(activity)
                 }
-                11->{//列表输入框
+                11 -> {//列表输入框
                     startActivity<InputSudientListActivity>(activity)
+                }
+                12 -> {
+                    startActivity<WebviewActivity>(activity)
+                }
+                13 -> {//自定义view集合
+                    startActivity<CustomViewsActivity>(activity)
                 }
             }
         }

@@ -5,6 +5,7 @@ import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.szy.kotlindemo.R
 import com.szy.kotlindemo.base.BaseRecyAdapter
@@ -30,7 +31,7 @@ class ItemHomeMenuAdapter(mContext: Context) :
     }
 
     class ViewHoder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var tvName: TextView = itemView.findViewById(R.id.tvName)
+        var tvName: AppCompatTextView = itemView.findViewById(R.id.tvName)
 
     }
 }
